@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sofia World App</title>
-    <!-- Bootstrap para que sea responsivo -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body class="bg-light">
@@ -68,10 +67,9 @@
         fetch(`/cities/${countryCode}`)
             .then(response => response.json())
             .then(data => {
-                // Muestra el nombre del país
                 document.getElementById('countryName').textContent = data.country;
 
-                // Llena top ciudades mayor población
+                // top ciudades mayor población
                 const topList = document.getElementById('topCities');
                 topList.innerHTML = '';
                 data.topCities.forEach((city, index) => {
@@ -84,7 +82,7 @@
                         </li>`;
                 });
 
-                // Llena top ciudades menor población
+                // top ciudades menor población
                 const bottomList = document.getElementById('bottomCities');
                 bottomList.innerHTML = '';
                 data.bottomCities.forEach((city, index) => {

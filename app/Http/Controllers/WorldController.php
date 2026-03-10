@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class WorldController extends Controller
 {
     /**
-     * Muestra la pantalla principal con el listado de países
+     *Pantalla principal de listado de países
      */
     public function index()
     {
@@ -17,9 +17,8 @@ class WorldController extends Controller
     }
 
     /**
-     * Retorna las ciudades de un país en formato JSON
-     * ordenadas de mayor a menor población (top 10)
-     * y las de menor población
+     * Retorna las ciudades en orden descendente de población (top 10)
+     * y las de menor población en orden ascendente.
      */
     public function getCities($countryCode)
     {
