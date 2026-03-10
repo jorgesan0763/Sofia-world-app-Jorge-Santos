@@ -1,3 +1,115 @@
+# 🌍 Sofia World App
+
+Aplicación web desarrollada para Sofia Restrepo, que permite explorar las ciudades 
+del mundo según el país seleccionado, mostrando las ciudades con mayor y menor 
+población.
+
+## 📋 Descripción
+
+La aplicación permite:
+- Seleccionar cualquier país disponible en la base de datos
+- Ver el **Top 10 de ciudades con mayor población** del país seleccionado
+- Ver el **Top 10 de ciudades con menor población** del país seleccionado
+
+## 🛠️ Tecnologías utilizadas
+
+- **PHP** 8.2
+- **Laravel** 10.x
+- **MySQL** - Base de datos World
+- **Bootstrap** 5.3
+- **JavaScript** (Fetch API)
+
+## 📁 Estructura del proyecto
+```
+sofia-world-app/
+├── app/
+│   ├── Http/
+│   │   └── Controllers/
+│   │       └── WorldController.php   # Controlador principal
+│   └── Models/
+│       ├── Country.php               # Modelo de países
+│       └── City.php                  # Modelo de ciudades
+├── resources/
+│   └── views/
+│       └── world.blade.php           # Vista principal
+├── routes/
+│   └── web.php                       # Definición de rutas
+└── docs/
+    └── diagrama-bd.png               # Diagrama de base de datos
+```
+
+## 🗄️ Diagrama de base de datos
+
+![Diagrama BD](database/diagrama_db_world.pdfpdf)
+
+## ⚙️ Instalación y configuración
+
+### Requisitos previos
+- PHP 8.1 o superior
+- Composer
+- MySQL
+- Git
+
+### Pasos
+
+1. **Clona el repositorio**
+```bash
+git clone https://github.com/jorgesan0763/sofia-world-app-Jorge-Santos.git
+cd sofia-world-app
+```
+
+2. **Instala las dependencias**
+```bash
+composer install
+```
+
+3. **Configura el archivo de entorno**
+```bash
+cp .env.example .env
+```
+Edita el `.env` con tus credenciales de MySQL:
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=world
+DB_USERNAME=tu_usuario
+DB_PASSWORD=tu_contraseña
+```
+
+4. **Genera la clave de la aplicación**
+```bash
+php artisan key:generate
+```
+
+5. **Importa la base de datos**
+```bash
+mysql -u tu_usuario -p world < world.sql
+```
+
+6. **Levanta el servidor**
+```bash
+php artisan serve
+```
+
+7. **Abre en el navegador**
+```
+http://127.0.0.1:8000
+```
+
+## 📌 Rutas disponibles
+
+| Método | Ruta | Descripción |
+|--------|------|-------------|
+| GET | `/` | Pantalla principal con selector de países |
+| GET | `/cities/{countryCode}` | Retorna ciudades del país en JSON |
+
+## 👨‍💻 Autor
+
+**[Jorge Elias Santos Acosta]**  
+[Jornel2439@gmail.com]  
+[](https://github.com/jorgesan0763)[]
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
