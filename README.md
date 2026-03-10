@@ -40,7 +40,8 @@ sofia-world-app/
 
 ## 🗄️ Diagrama de base de datos
 
-![Diagrama BD](database/diagrama_db_world.pdf)
+ruta dentro del repositorio:
+database/diagrama_db_world.pdf
 
 ## ⚙️ Instalación y configuración
 
